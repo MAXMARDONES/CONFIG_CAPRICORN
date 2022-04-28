@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchfab Configurator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="vr" width="640"
+            height="400"></iframe>
+        <div class="options"></div>
+    </div>
+</body>
+
+<script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.3.2.js"></script>
+<script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script>
+<script type="text/javascript">
+    var config = {
+    "model": "476d01d8dd94453eb35038fcd2b42486",
+    "params": {
+        "camera": 0,
+        "preload": 1,
+        "ui_controls": 0,
+        "ui_infos": 0,
+        "ui_watermark": 0
+    },
+    "config": [
+        {
+            "name": "Selecciona un color de piso",
+            "material": "Material.001",
+            "channels": [
+                "AlbedoPBR"
+            ],
+            "type": "texture",
+            "options": [
+                {
+                    "name": "Madera 01",
+                    "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg"
+                },
+                {
+                    "name": "Madera 02",
+                    "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg"
+                },
+                {
+                    "name": "Madera 03",
+                    "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"
+                }
+            ],
+            "default": 1
+        },
+        {
+            "name": "Color Muro",
+            "type": "color",
+            "material": "Pillow Shader.001",
+            "default": "#ABABAB"
+        },
+        {
+            "name": "Color Cojines",
+            "type": "color",
+            "material": "Pillow Shader",
+            "default": "#6AA0A4"
+        }
+    ]
+};
+    var iframeEl = document.getElementById('api-frame');
+    var optionsEl = document.querySelector('.options');
+    var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
+</script>
+
+</html>
